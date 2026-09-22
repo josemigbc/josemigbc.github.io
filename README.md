@@ -5,35 +5,35 @@ Landing page personal (currículum + portafolio). Vite + React + TypeScript + Ta
 ## Desarrollo
 
 ```bash
-npm install
-npm run dev       # servidor local con hot reload
-npm run build     # genera dist/ listo para hostear en cualquier sitio estático
-npm run preview   # sirve dist/ localmente para probar el build
+yarn install   # instalar deps
+yarn dev       # run servidor local dev
+yarn build     # genera dist/ listo para hosted en cualquier sitio estático
+yarn preview   # sirve dist/ localmente para probar el build
 ```
 
 ## Deploy
 
-`npm run build` genera `dist/`. Ese contenido se puede subir tal cual a Vercel, Netlify, GitHub Pages, o copiarlo a un VPS detrás de nginx/caddy — no requiere servidor Node en producción.
+`yarn build` genera `dist/`. Ese contenido se puede subir tal cual a Vercel, Netlify, GitHub Pages, o copiarlo a un VPS detrás de nginx/caddy — no requiere servidor Node en producción.
 
 ## Agregar proyectos
 
-Editá `src/data/projects.ts` y agregá objetos al array `projects`. En cuanto haya al menos uno, la sección "Proyectos" pasa automáticamente del estado vacío a mostrar las tarjetas.
+Edita `src/data/projects.ts` y agrega objetos al array `projects`. En cuanto haya al menos uno, la sección "Proyectos" pasa automáticamente del estado vacío a mostrar las tarjetas.
 
-```ts
+```json
 {
-  name: "Feed Pipe",
-  description: "App de seguimiento de ingesta diaria de nutrientes.",
-  stack: ["Next.js", "TypeScript", "Django REST Framework"],
-  url: "https://github.com/tu-usuario/feed-pipe",
+  "name": "Feed Pipe",
+  "description": "App de seguimiento de ingesta diaria de nutrientes.",
+  "stack": ["Next.js", "TypeScript", "Django REST Framework"],
+  "url": "https://github.com/tu-usuario/feed-pipe"
 }
 ```
 
 ## Agregar LinkedIn / GitHub / otras redes
 
-Editá `src/data/links.ts` y agregá objetos al array `socialLinks`. Aparecen automáticamente debajo del email y el teléfono en la sección de contacto.
+Edita `src/data/links.ts` y agrega objetos al array `socialLinks`. Aparecen automáticamente debajo del email y el teléfono en la sección de contacto.
 
-```ts
-{ label: "LinkedIn", url: "https://linkedin.com/in/tu-usuario" },
+```json
+{"label": "LinkedIn", "url": "https://linkedin.com/in/tu-usuario"}
 ```
 
 ## Editar contenido (textos, experiencia, educación, skills)
