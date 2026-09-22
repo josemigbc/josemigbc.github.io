@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Fraunces", ui-serif, serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-paper: #f5f6f3;
+  --color-paper-dim: #eceee9;
+  --color-ink: #14181a;
+  --color-ink-soft: #4a5350;
+  --color-line: #d8dcd6;
+
+  --color-void: #101513;
+  --color-void-dim: #171d1a;
+  --color-bone: #eef0ec;
+  --color-bone-soft: #a9b3ad;
+  --color-line-dark: #263029;
+
+  --color-teal: #2f6e68;
+  --color-teal-soft: #a9c9c4;
+  --color-teal-dark: #6fb3ab;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.spectral-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-spectral 1.6s ease-out 0.2s forwards;
+}
+
+@keyframes draw-spectral {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spectral-draw {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
