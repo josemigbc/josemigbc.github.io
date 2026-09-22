@@ -2,10 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useTheme } from "../theme/ThemeContext";
 import { useActiveSection } from "../hooks/useActiveSection";
-import type { Lang } from "../i18n/types";
+import type { Lang } from "../i18n";
+import {SunIcon} from "./icons/SunIcon.tsx";
+import {MoonIcon} from "./icons/MoonIcon.tsx";
+import {ChevronIcon} from "./icons/ChevronIcon.tsx";
 
 const SECTION_IDS = ["about", "experience", "education", "skills", "projects", "contact"];
-const LANGS: Lang[] = ["es", "en", "pt"];
+const LANGUAGES: Lang[] = ["es", "en", "pt"];
 
 export function Nav() {
   const { lang, setLang, t } = useLanguage();
@@ -61,7 +64,6 @@ export function Nav() {
           JMCF
         </a>
 
-        {/* Desktop tabs */}
         <nav className="hide-scrollbar hidden min-w-0 gap-1 overflow-x-auto sm:flex" aria-label="Section navigation">
           {tabs.map((tab) => (
             <button
@@ -79,7 +81,6 @@ export function Nav() {
           ))}
         </nav>
 
-        {/* Mobile dropdown trigger */}
         <div ref={menuRef} className="relative min-w-0 sm:hidden">
           <button
             onClick={() => setMenuOpen((v) => !v)}
@@ -118,7 +119,7 @@ export function Nav() {
 
         <div className="flex shrink-0 items-center gap-3">
           <div className="flex items-center gap-0.5 font-mono text-xs">
-            {LANGS.map((l) => (
+            {LANGUAGES.map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
@@ -143,41 +144,5 @@ export function Nav() {
         </div>
       </div>
     </header>
-  );
-}
-
-function ChevronIcon({ open }: { open: boolean }) {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
-    >
-      <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-      <path d="M21 12.5A9 9 0 1 1 11.5 3a7 7 0 0 0 9.5 9.5Z" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function SunIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-      <circle cx="12" cy="12" r="4.5" />
-      <path
-        d="M12 2.5v2M12 19.5v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M2.5 12h2M19.5 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
-        strokeLinecap="round"
-      />
-    </svg>
   );
 }
