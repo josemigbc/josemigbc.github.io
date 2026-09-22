@@ -67,7 +67,7 @@ export function Nav() {
             <button
               key={tab.id}
               onClick={() => scrollTo(tab.id)}
-              className={`shrink-0 border-b-2 px-2.5 py-2 text-sm transition-colors ${
+              className={`shrink-0 border-b-2 px-2.5 py-2 text-sm transition-colors duration-300 ${
                 active === tab.id
                   ? "border-teal text-ink dark:text-bone"
                   : "border-transparent text-ink-soft hover:text-ink dark:text-bone-soft dark:hover:text-bone"
@@ -85,9 +85,11 @@ export function Nav() {
             onClick={() => setMenuOpen((v) => !v)}
             aria-expanded={menuOpen}
             aria-haspopup="true"
-            className="flex items-center gap-1.5 truncate border-b-2 border-teal px-2 py-2 text-sm text-ink dark:text-bone"
+            className="flex items-center gap-1.5 truncate border-b-2 border-teal px-2 py-2 text-sm text-ink transition-colors duration-300 dark:text-bone"
           >
-            <span className="truncate">{activeTab.label}</span>
+            <span key={activeTab.id} className="label-fade truncate">
+              {activeTab.label}
+            </span>
             <ChevronIcon open={menuOpen} />
           </button>
 
@@ -101,7 +103,7 @@ export function Nav() {
                   key={tab.id}
                   onClick={() => scrollTo(tab.id)}
                   aria-current={active === tab.id ? "true" : undefined}
-                  className={`block w-full px-4 py-2.5 text-left text-sm transition-colors ${
+                  className={`block w-full px-4 py-2.5 text-left text-sm transition-colors duration-300 ${
                     active === tab.id
                       ? "text-teal dark:text-teal-dark"
                       : "text-ink-soft hover:bg-paper-dim hover:text-ink dark:text-bone-soft dark:hover:bg-void-dim dark:hover:text-bone"
