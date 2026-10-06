@@ -68,6 +68,7 @@ export const es: Translation = {
     title: "Proyectos",
     emptyTitle: "Próximamente",
     emptyBody: "Esta sección está lista para sumar proyectos con su descripción, stack y enlace.",
+    downloadFor: "Descargar para",
   },
   contact: {
     title: "Contacto",

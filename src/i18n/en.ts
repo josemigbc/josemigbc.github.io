@@ -68,6 +68,7 @@ export const en: Translation = {
     title: "Projects",
     emptyTitle: "Coming soon",
     emptyBody: "This section is ready for projects, each with a description, stack and link.",
+    downloadFor: "Download for",
   },
   contact: {
     title: "Contact",

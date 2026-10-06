@@ -1,6 +1,9 @@
 import { useLanguage } from "../i18n/LanguageContext";
 import { Section } from "./Section";
 import { projects } from "../data/projects";
+import DownloadOptions from "./DownloadOptions.tsx";
+
+
 export function Projects() {
   const { t, lang } = useLanguage();
 
@@ -32,16 +35,7 @@ export function Projects() {
                   <li key={s}>{s}</li>
                 ))}
               </ul>
-              {project.downloadUrls?.length &&
-                  <ul className="mt-3 flex justify-between flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-teal dark:text-teal-dark">
-                    {project.downloadUrls.map((downloadLink) => (
-                      <li key={downloadLink.platform}>
-                        <a className="font-semibold text-lg hover:underline hover:underline-offset-1"
-                           href={downloadLink.url}>{downloadLink.platform.toLocaleUpperCase()}</a>
-                      </li>
-                    ))}
-                  </ul>
-              }
+              <DownloadOptions downloadUrls={project.downloadUrls}/>
             </a>
           ))}
         </div>

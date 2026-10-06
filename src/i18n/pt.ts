@@ -68,6 +68,7 @@ export const pt: Translation = {
     title: "Projetos",
     emptyTitle: "Em breve",
     emptyBody: "Esta seção está pronta para receber projetos, cada um com descrição, stack e link.",
+    downloadFor: "Baixar para",
   },
   contact: {
     title: "Contato",

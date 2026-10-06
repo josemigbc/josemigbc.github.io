@@ -1,13 +1,13 @@
 import type {Lang} from "../i18n";
 
-type OS = "windows" | "linux" | "android";
+export type DownloadOS = "windows" | "linux" | "android";
 
 export interface Project {
   name: string;
   description: Record<Lang, string>;
   stack: string[];
   url?: string;
-  downloadUrls?: Array<{url: string; platform: OS}>;
+  downloadUrls?: Array<{url: string; platform: DownloadOS}>;
 }
 
 

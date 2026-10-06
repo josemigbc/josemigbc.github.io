@@ -52,6 +52,7 @@ export interface Translation {
     title: string;
     emptyTitle: string;
     emptyBody: string;
+    downloadFor: string;
   };
   contact: {
     title: string;
